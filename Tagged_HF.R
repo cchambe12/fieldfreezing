@@ -22,3 +22,7 @@ d$stage<-substr(d$ind, 0,1)
 d$sp_stage<-substr(d$ind, 0,8)
 
 count<-as.data.frame(table(d$sp_stage))
+count<-count%>%
+  rename(ind=Var1)%>%
+  rename(number=Freq)
+d<-d[!duplicated(d$ind), ]
