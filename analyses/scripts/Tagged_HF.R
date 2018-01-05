@@ -13,8 +13,8 @@ library(tidyr)
 library(ggplot2)
 
 # Set Working directory
-setwd("~/Documents/git/fieldfreezing")
-d<-read.csv("Exp_taggedHF.csv", header=TRUE)
+setwd("~/Documents/git/fieldfreezing/analyses")
+d<-read.csv("input/Exp_taggedHF.csv", header=TRUE)
 
 d$species<-substr(d$ind, 3,8)
 d$number<-substr(d$ind, 12, 13)
