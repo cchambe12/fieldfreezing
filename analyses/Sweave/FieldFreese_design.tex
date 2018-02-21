@@ -1,0 +1,194 @@
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{natbib}
+\bibliographystyle{..//papers/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.015cm   
+\evensidemargin -0.015cm
+\textwidth 16cm
+\textheight 21cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Field Freezing Experiment}
+
+\textbf{ORIGINAL DESIGN (without a real false spring): } I will design a field experiment to evaluate the differences in damage sustained across life stage to assess forest recruitment and sustainability. I will monitor the phenology of sapling and adult individuals across 8-9 species for 16 adults and 24 saplings per species and expose half of the individuals to simulated false spring events (Table \ref{tab:fieldfrz}). I will quantify the traits important for frost tolerance (i.e. leaf serrations and number of trichomes) and monitor those traits across life stage.  To simulate a false spring, I will construct multiple in-field growth chambers and place them over individuals between budburst and leafout for an hour just after sunrise, which is the coldest time of day. I will then monitor their growth and phenology from budburst to leaf drop to determine the effects of false springs across life stage.
+
+\textbf{QUESTIONS: }
+\begin{enumerate}
+\item Do different life stages utilize different avoidance and/or tolerance strategies?
+\item Does false spring damage vary across life stage?
+\end{enumerate}
+
+\textbf{PLANS FOR ANALYSIS: }
+\newline
+\textit{Question 1: } I want to first evaluate the variation in strategies across life stage. For this question, I will have either Duration of Vegetative Risk, number of trichomes or number of leaf serrations as the response variable (Equation \ref{eq:1}).
+\begin{equation} \label{eq:1}
+y_i = \alpha_{sp_(i)} + \beta_{lifestage_{sp_{(i)}}} + \sigma_{sp_{(i)}}
+\end{equation}
+
+\textit{Question 2: } I will look at how the duration of vegetative risk shifts under the treatment and I will also have leaf chlorophyll content and SLA as response variables (Equation \ref{eq:2}).
+\begin{equation} \label{eq:2}
+y_i = \alpha_{(i)} + \beta_{tx_{sp_{(i)}}} + \beta_{serrations_{sp_{(i)}}} + \beta_{trichomes_{sp_{(i)}}} + \sigma_{sp_{(i)}}
+\end{equation}
+
+\textbf{POTENTIAL SHIFT IN DESIGN (if a real false spring is expected): } Could I place hobo loggers on individuals that are between budburst and leafout and if the temperature drops below -2.2$^{\circ}$C then it is considered a false spring treatment? The temperatures would vary but at least I would be monitoring that temperature...? Still thinking! Temperatures have been in the 50s and 60s over the last couple of weeks. We are supposed to get into the high 60s a couple times this week and then it's suppose to drop again... and then go back up to the 50s. I few of my smaller individuals are already showing signs of bud swelling. From my experiment last spring, I saw that -- depending on the species -- the buds could look like that for quite a while before bursting so it may be okay, but it is still so early in the year. My concern is that I will start the experiment and then a false spring will hit halfway through and I will greatly reduce my sample size and number of species. Right now, I will continue to monitor the buds and if I think an individual is very close to budburst, I will look at the 10 day forecast and try to determine the best course of action from there. I also have a lot of individuals tagged at the Grant (Table \ref{tab:grant}), which I will go check on those individuals in the next couple of weeks. Maybe one site will have a false spring and the other won't --- at least one can hope!
+
+
+\begin{table}[H]
+\centering
+\caption{Number of individuals already tagged in Harvard Forest for the spring field season.}
+\begin{tabular}{|c | c | c |}
+\hline
+\textbf{Species} & \textbf{Stage} & \textbf{\# of Individuals} \\
+\hline
+\textit{Acer pensylvanicum} & Sapling & 24 \\
+\hline 
+\textit{A. saccharum} & Sapling & 24 \\
+\hline
+\textit{Betula lenta} & Sapling & 24 \\
+\hline
+\textit{Carya ovata} & Sapling & 24 \\
+\hline
+\textit{Corylus cornuta} & Sapling & 24 \\
+\hline
+\textit{Fagus grandifolia} & Sapling & 16 \\
+\hline
+\textit{Hamamelis virginiana} & Sapling & 24 \\
+\hline
+\textit{Ilex verticillata} & Sapling & 24 \\
+\hline
+\textit{Viburnum acerfolium} & Sapling & 24 \\
+\hline
+\textit{A. pensylvanicum} & Tree & 16 \\
+\hline
+\textit{A. saccharum} & Tree & 16 \\
+\hline
+\textit{B. lenta} & Tree & 16 \\
+\hline
+\textit{C. ovata} & Tree & 16 \\
+\hline
+\textit{C. cornuta} & Tree & 16 \\
+\hline
+\textit{F. grandifolia} & Tree & 16 \\
+\hline
+\textit{H. virginiana} & Tree & 16 \\
+\hline
+\textit{I. verticillata} & Tree & 16 \\
+\hline
+\textit{V. acerfolium} & Tree & 16 \\
+\hline
+\end{tabular}
+\label{tab:fieldfrz}
+\end{table}
+
+\begin{center}
+\captionof{table}{Field Freezing (Grant) - number of saplings marked per species. } \label{tab:grant} 
+\footnotesize
+\begin{tabular}{|c | c |}
+\hline
+\textbf{Species} & \textbf{No. of Individs} \\
+\hline
+VIBLAN & 16 \\
+\hline
+ILEMUC & 16 \\
+\hline
+BETALL & 16 \\
+\hline
+FAGGRA & 16 \\
+\hline
+ALNINC & 16 \\
+\hline
+PRUPEN & 16 \\
+\hline
+ACERUB & 16 \\
+\hline
+ACESAC & 16 \\
+\hline
+ACEPEN & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\end{document}
